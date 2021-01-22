@@ -117,8 +117,13 @@
               "devServerTarget": "project-coronavirus:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "project-coronavirus"
 }

@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Hola, {{ usarioInfo.userName}} </h1>
+    <button (click)="navigate()" class="btn btn-success">Agregar</button>
+    <br>
+    <ul class="list-group">
+        <li *ngFor="let suc of sucursales" class="list-group-item list-group-item-action">
+            <h5>nombre: {{suc.name}}</h5>
+            <h5>estado: {{suc.state}}</h5>
+            <button (click)="deleteSucursal(suc)" class="btn btn-danger">
+                Eliminar
+            </button>
+            <button (click)="updateSucursal(suc.id)"  class="btn btn-warning">
+                Editar
+            </button>
+        </li>
+    </ul>
+</div>

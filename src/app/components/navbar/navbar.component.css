@@ -1,0 +1,27 @@
+.navbar__main{
+    background-color: #fff;
+}
+
+.navbar-nav .nav-item a{
+   color: #000;
+   font-weight: bold;
+   padding: 1.3rem;
+}
+
+.navbar-nav .nav-item a:hover{
+   color:#F07171;
+   transition: 0.3s all ease-in-out;
+}
+
+
+.btn-custom:hover{
+    background-color: #fff;
+    color: #F07171;
+    border: #F07171 1px solid;
+    transition: 0.4s all ease-in-out;
+}
+
+.navbar-light .navbar-toggler .navbar-toggler-icon{
+    color: #fff !important;
+   
+}

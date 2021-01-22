@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="">
+        <form (ngSubmit)="onSubmit()">
+            <div *ngIf="step === 1" class="">
+                <input [(ngModel)]="sucursal.name" class="form-control" type="text" name="name"
+                    placeholder="nombre empresa">
+                <input [(ngModel)]="sucursal.location" class="form-control" type="text" name="location"
+                    placeholder="domicilio">
+                <input [(ngModel)]="sucursal.tel" class="form-control" type="text" name="tel" placeholder="tel">
+                <select [(ngModel)]="sucursal.state" name="state" class="custom-select">
+                    <option selected>Open this select menu</option>
+                    <option *ngFor="let estado of estados" [value]= "estado">{{ estado }}</option>
+                </select>
+                <button (click)="siguiente()" class="btn btn-danger" type="button"> Siguiente </button>
+            </div>
+            <div *ngIf="step === 2">
+                <div class="form-check form-check-inline">
+                    <input  [(ngModel)]="sucursal.products.sanitizer" (change)="onChange($event,'sanitizer')" name="products.sanitizer"  class="form-check-input" type="checkbox" id="inlineCheckbox1">
+                    <label class="form-check-label" for="inlineCheckbox1">Gel antibacterial</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input  [(ngModel)]="sucursal.products.mask" (change)="onChange($event,'mask')" name="products.mask"  class="form-check-input" type="checkbox" id="inlineCheckbox2" >
+                    <label class="form-check-label" for="inlineCheckbox2">Mascarillas</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input  [(ngModel)]="sucursal.products.oxygen" (change)="onChange($event,'oxygen')" name="products.oxygen"  class="form-check-input" type="checkbox" id="inlineCheckbox3" >
+                    <label class="form-check-label" for="inlineCheckbox3">Tanque de oxigeno</label>
+                  </div>
+                <br>
+                <button (click)="atras()" class="btn btn-danger" type="button"> Anterior </button>
+
+                <button class="btn btn-success" type="submit">Terminar</button>
+            </div>
+
+        </form>
+        <a (click)="goBack()" class="btn btn-secondary"> Cancelar </a>
+
+
+    </div>
+</div>

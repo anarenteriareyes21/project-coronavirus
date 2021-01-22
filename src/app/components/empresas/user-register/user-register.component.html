@@ -1,0 +1,12 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()">
+        <input  [(ngModel)]="usuario.email"
+                type="email" class="form-control" name="email" placeholder="email">
+        <input  [(ngModel)]="usuario.username"
+                type="text" class="form-control" name="username" placeholder="username">
+        <input  [(ngModel)]="usuario.password"
+                type="password" class="form-control" name="password" placeholder="password">
+        <button type="submit" class="btn btn-danger">Registrar</button>
+        <a class="link" (click)="redirectTo()">¿Ya tienes una cuenta? Inicia sesión</a>
+    </form>
+</div>

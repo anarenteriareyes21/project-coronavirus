@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Lista de proveedores</h1>
+    <select [(ngModel)]="estadoNombre" name="state" class="custom-select">
+        <option selected>Selecciona un estado</option>
+        <option *ngFor="let estado of estados" [value]= "estado">{{ estado }}</option>
+    </select>
+    <button (click)="buscarProveedores()" class="btn btn-danger">Buscar</button>
+    <br>
+    <ul class="list-group">
+        <li *ngFor="let proveedor of proveedores" class="list-group-item list-group-item-action">
+            <h5>nombre: {{proveedor.name}}</h5>
+            <h5>estado: {{proveedor.state}}</h5>
+            <h5>telefono: {{proveedor.tel}}</h5>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,8 @@
+
+<div class="conatiner">
+    <form (ngSubmit)= "onSubmit()">
+        <input [(ngModel)]="usuario.email" class="form-control"type="email" name="email" placeholder="email">
+        <input [(ngModel)]="usuario.password" class="form-control"type="password" name="password" placeholder="passowrd">
+        <button class="btn btn-danger" type="submit">Iniciar sesion</button>
+    </form>
+</div>

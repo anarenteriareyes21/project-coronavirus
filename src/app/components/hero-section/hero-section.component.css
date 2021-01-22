@@ -1,0 +1,63 @@
+
+.hero__img{
+    width: 80%;
+}
+
+.hero__title{
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.hero__subtitle{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hero__paragraph{
+    font-size: 17px;
+}
+
+.hero__btn{
+    width: 150px;
+    border-radius: 5px;
+    font-weight: bold;    
+}
+
+.hero__btn:hover{
+    background-color: #f58d8d;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {  
+    .hero__title{
+        font-size: 65px;
+    }
+    .hero__img{
+        width: 100%;
+    }
+    .hero__subtitle{
+        font-size: 30px;
+    }
+    .hero__paragraph{
+        width: 85%;
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+    
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+  
+}
+ 
