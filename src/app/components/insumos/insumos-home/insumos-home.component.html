@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <h1>Selecciona producto</h1>
     <div class="card-group">
         <div (click)="navigate('mask')" class="card">
@@ -20,4 +20,58 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 order-1 order-md-0">
+      <h1 class="insumos__title">¿Necesitas insumos?</h1>
+      <p class="insumos__p">
+        Te proporcionamos una lista de empresas/negocios que puedes contactar
+        para conseguir cada uno de estos materiales.
+      </p>
+      <p>Selecciona alguno de ellos para ver su lista:</p>
+      <div class="card-deck">
+        <div (click)="navigate('mask')" class="card">
+          <img
+            src="../../../../assets/img/medical-mask.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h6 class="card-title">Mascarillas</h6>
+          </div>
+        </div>
+        <div (click)="navigate('sanitizer')" class="card">
+          <img
+            src="../../../../assets/img/sanitizer.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h6 class="card-title text-center">Gel antibacterial</h6>
+            
+          </div>
+        </div>
+        <div (click)="navigate('oxygen')"  class="card">
+          <img
+            src="../../../../assets/img/tanque-de-oxigeno.png"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h6 class="card-title">Oxigeno</h6>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-custom" role="alert">
+        <img src="../../../../assets/img/warning.svg" >
+        <a routerLink="/empresas">  ¿Eres una empresa y te interesa ofrecer tus productos? Ingresa tus datos aqui.</a>
+        
+      </div>
+    </div>
+    <div class="col-md-6 order-0 order-md-1">
+      <img src="../../../../assets/img/doctors-svg.svg" class="insumos__img" />
+    </div>
+  </div>
 </div>

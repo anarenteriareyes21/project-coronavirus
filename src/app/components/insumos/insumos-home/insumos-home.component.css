@@ -1,8 +1,79 @@
 
-.card{
-    cursor: pointer;
+
+.container{
+    margin-top: 5vh;
+    width: 100%;
+    /* border: 1px solid; */
+    padding: 20px;
+    /* position: relative; */
 }
 
-.card:hover{
-    box-shadow: 1px 2px 3px black;
+.insumos__title{
+    margin-top: 5vh;
+    font-weight: bold;
+    font-size: 50px;
 }
+
+.insumos__p{
+    margin-top: 1.4rem;
+    width: 90%;
+    font-size: 18px;
+    line-height: 1.6rem;
+}
+
+/* ------ card styles ----- */
+
+.card {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+    box-shadow: -5px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card:hover {
+    cursor: pointer;
+    border-bottom: 5px #67A8C8 solid;
+    transition: 0.2s all ease-in-out;
+  }
+  
+  .card img {
+    margin-top: 25px;
+    height: 100px;
+    width: 100px;
+  }
+  
+  .card h6 {
+    font-size: 14px;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  /* alert custom */
+
+  .alert-custom{
+    margin-top: 20px;  
+    background-color: rgba(255, 10, 10, 0.2);
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .alert-custom img{
+      width: 9%;
+  }
+  
+  .alert-custom a{
+      color: #FF0A0A;
+      font-size: 12px;
+      margin-left: 10px;
+      text-decoration: underline;
+  }

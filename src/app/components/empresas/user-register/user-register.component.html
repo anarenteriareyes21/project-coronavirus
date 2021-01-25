@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <form (ngSubmit)="onSubmit()">
         <input  [(ngModel)]="usuario.email"
                 type="email" class="form-control" name="email" placeholder="email">
@@ -9,4 +9,77 @@
         <button type="submit" class="btn btn-danger">Registrar</button>
         <a class="link" (click)="redirectTo()">¿Ya tienes una cuenta? Inicia sesión</a>
     </form>
+</div> -->
+<div class="container mx-auto">
+  <div class="myCard">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="myLeftCtn">
+          <form (ngSubmit)="onSubmit()" class="myForm text-center">
+            <header>Crea una nueva cuenta</header>
+            <div class="form-group">
+              <i class="fas fa-envelope"></i>
+              <input
+                required
+                [(ngModel)]="usuario.email"
+                name="email"
+                class="myInput"
+                type="email"
+                placeholder="Correo"
+                id="email"
+              />
+            </div>
+            <div class="form-group">
+              <i class="fas fa-user"></i>
+              <input
+                required
+                [(ngModel)]="usuario.username"
+                name="username"
+                class="myInput"
+                type="text"
+                placeholder="Nombre de usuario"
+                id="username"
+              />
+            </div>
+            <div class="form-group">
+              <i class="fas fa-lock"></i>
+              <input
+                required
+                [(ngModel)]="usuario.password"
+                name="password"
+                class="myInput"
+                type="password"
+                placeholder="Contraseña"
+                id="password"
+              />
+            </div>
+            <input type="submit" class="btnCustom" value="Registrarme" />
+          </form>
+          <a class="linkLeft" (click)="redirectTo()"
+            >¿Ya tienes una cuenta? Inicia sesión.</a
+          >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="myRightCtn">
+          <div class="box">
+            <img
+              src="../../../../assets/img/InsumosImg.png"
+              class="img-fluid"
+            />
+            <header>
+              Ayuda a la lucha contra el
+              <span class="color_custom_word">COVID-19</span>
+            </header>
+            <p>
+              Puedes ayudar a la sociedad a luchar contra el coronavirus,
+              registra tu empresa en
+              <span class="weight_custom_word">sarsInfo.</span>
+              ¡Nosotros nos encargaremos de que las personas te encuentren!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

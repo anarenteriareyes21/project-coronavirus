@@ -1,0 +1,85 @@
+
+
+
+.rightContainer img{
+    width: 100%;
+    margin-top: 10vh;
+}
+
+
+.imgInfo{
+    width: 100px;
+    align-self: center;
+}
+
+.leftContainer p{
+    line-height: 1.7rem;
+}
+
+.intensidadContainer li{
+    margin: 10px;
+    list-style: none;
+    
+}
+
+.leveColor{
+    color: #8FF2E9;
+}
+
+.moderadoColor{
+    color: #EF8A3D;
+}
+
+.graveColor{
+    color: #F07171;
+}
+
+.textColorDefault{
+    color: #000;
+}
+
+
+.intensidadContainer .leve .flaticon-boton{
+    color: #8FF2E9;
+}
+
+.intensidadContainer .moderada .flaticon-boton{
+    color: #EF8A3D;
+}
+
+.intensidadContainer .grave .flaticon-boton{
+    color: #F07171;
+}
+
+.leftContainer .btn-sintomas{
+    background-color: #F07171;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 30px;
+}
+
+.leftContainer .btn-sintomas:hover{
+    background-color: #f58d8d;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+
+/* transmision styles */
+ .transmisionImg{
+     width: 250px;
+ }
+
+ .card{
+    border-radius: 20px;
+    border: none;
+    box-shadow: -5px 0px 10px 5px rgba(0, 0, 0, 0.1);
+ }
+
+ .card:hover {
+    border-bottom: 5px #F07171 solid;
+    transition: 0.2s all ease-in-out;
+  }
+
+ 

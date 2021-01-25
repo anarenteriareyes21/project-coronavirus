@@ -1,0 +1,138 @@
+.container {
+  /* border: 1px solid;  */
+  position: absolute;
+  padding: 15px;
+  max-width: 600px;
+  height: 450px;
+  margin: auto;
+  margin-top: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  box-shadow: -5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form__main {
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid; */
+  position: relative;
+  padding: 10px;
+}
+
+.form__main h4 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.form__main .myInput {
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  padding-left: 50px;
+  border: 1px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.form__main .myInput:focus {
+  outline: none;
+}
+
+.form__main .custom-select {
+  width: 90%;
+  border-radius: 10px;
+  border: 1px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.form__main .custom-select:focus {
+  outline: none;
+  border: none;
+}
+
+.form__main .fas {
+  position: relative;
+  color: #f07171;
+  left: 36px;
+}
+
+.form__main .btn-next {
+  background-color: #f07171;
+  color: #fff;
+  width: 230px;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 0 10px 41px -11px rgba(0, 0, 0, 0.1);
+}
+
+.form__main .btn-next:hover {
+  background-color: #f58d8d;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.container .fa-arrow-circle-left {
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  font-size: 1.5rem;
+  color: #f07171;
+  cursor: pointer;
+}
+
+.container .fa-arrow-circle-left span {
+  cursor: default;
+  position: absolute;
+  margin-left: 5px;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.btn-finish {
+  background-color: #5abb93;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.btn-finish:hover {
+  background-color: #7fd1af;
+  transition: 0.2s all ease-in-out;
+}
+
+/* ------ card styles ----- */
+
+.card {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  border: none;
+  box-shadow: -5px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  border-bottom: 5px #67A8C8 solid;
+  transition: 0.2s all ease-in-out;
+}
+
+.card img {
+  margin-top: 25px;
+  height: 100px;
+  width: 100px;
+}
+
+.card h6 {
+  font-size: 14px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body input {
+}

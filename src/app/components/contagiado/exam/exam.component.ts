@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PreguntaModel } from 'src/app/models/PreguntaModel.js';
-import {preguntas } from '../../data/preguntas.js'
+import {preguntas } from '../../../data/preguntas.js'
 
 
 @Component({

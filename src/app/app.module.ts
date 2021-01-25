@@ -15,10 +15,15 @@ import { FormsModule } from '@angular/forms';
 import { UserLoginComponent } from './components/empresas/login/user-login.component';
 import { UserDashboardComponent } from './components/empresas/dashboard/user-dashboard.component';
 import { RegisterComponent } from './components/empresas/register/register.component';
-import { ExamComponent } from './components/exam/exam.component';
+import { ExamComponent } from './components/contagiado/exam/exam.component';
 import { InsumosComponent } from './components/insumos/insumos.component';
 import { ProveedoresComponent } from './components/insumos/proveedores/proveedores.component';
 import { InsumosHomeComponent } from './components/insumos/insumos-home/insumos-home.component';
+import { ContagiadoComponent } from './components/contagiado/contagiado.component';
+import { ContagiadoHomeComponent } from './components/contagiado/contagiado-home/contagiado-home.component';
+import { SintomasComponent } from './components/sintomas/sintomas.component';
+import { PrevencionComponent } from './components/prevencion/prevencion.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -34,7 +39,12 @@ import { InsumosHomeComponent } from './components/insumos/insumos-home/insumos-
     ExamComponent,
     InsumosComponent,
     ProveedoresComponent,
-    InsumosHomeComponent
+    InsumosHomeComponent,
+    ContagiadoComponent,
+    ContagiadoHomeComponent,
+    SintomasComponent,
+    PrevencionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

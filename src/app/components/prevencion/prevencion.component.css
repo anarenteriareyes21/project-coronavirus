@@ -1,0 +1,29 @@
+
+
+.container .subtitle{
+    font-size: 17px;
+}
+
+/* swiper styles */
+.swiper-container{
+    height: 400px;
+    width: 100%;
+    border: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+    color: #DCDCDC;
+}
+
+.swiper-slide{
+    width: 300px;
+    height: 100%;
+}
+.swiper-container .swiper-wrapper .swiiper-slide .imgPrevención{
+    width: 50px;
+}
+
+.card{
+    border: none;
+}

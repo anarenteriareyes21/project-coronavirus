@@ -1,6 +1,7 @@
 
+
 .hero__img{
-    width: 80%;
+    width: 700px;
 }
 
 .hero__title{
@@ -14,19 +15,71 @@
 }
 
 .hero__paragraph{
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .hero__btn{
-    width: 150px;
+    border: none;
     border-radius: 5px;
-    font-weight: bold;    
+    padding: 5px 30px;
 }
 
 .hero__btn:hover{
     background-color: #f58d8d;
     color: #fff;
     transition: 0.3s ease-in-out;
+}
+
+
+/* what it is section */
+
+.leftContainer img{
+    width: 95%;
+}
+
+.rightContainer{
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightContainer img{
+    align-self: center;
+    width: 100px;
+}
+
+.rightContainer p{
+    font-size: 18px;
+    line-height: 1.8rem;
+}
+
+.rightContainer .counter{
+    /* border: 1px solid; */
+    border-radius: 17px;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 25px;
+    box-shadow: 5px 0px 21px -5px rgba(0, 0, 0, 0.2);
+    background: url(../../../assets/img/bg-counter_1.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.rightContainer .counter .recuperados{
+    color: #6EB7AC;
+}
+
+.counter .muertes{
+    color: #F07171;
+}
+
+.counter .recuperados small, .counter .casos small, .counter .muertes small{
+    color: #4B4B4B;
+    font-size: 13px;
+}
+
+.rightContainer .counter div{
+    /* border: 1px solid; */
 }
 
 

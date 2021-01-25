@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <h1>Hola, {{ usarioInfo.userName}} </h1>
     <button (click)="navigate()" class="btn btn-success">Agregar</button>
     <br>
@@ -14,4 +14,47 @@
             </button>
         </li>
     </ul>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 leftContainer">
+            <img src="../../../../assets/img/imgDashboard.svg">
+             <h1>Hola, <span class="color_custom_word" style="text-transform: capitalize;"> {{ usarioInfo.userName}} </span></h1>
+             <p>
+                Ayuda a la comunidad ofreciendo tus productos por medio de tu empresa. 
+                Agrega una nueva sucursal donde las personas puedan comprar los productos escenciales 
+                para luchar contra el covid-19.
+             </p>
+             <div (click)="navigate()" class="addButton">
+                 <img src="../../../../assets/img/plus.svg" class="img-fluid"> <span> Agregar una nueva sucursal</span> 
+             </div>   
+        </div>
+        <div class="col-sm-12 col-md-6 rightContainer">
+            <h3 class="text-center weight_custom_word"> Tus sucursales agregadas</h3>
+            <div  *ngFor="let suc of sucursales" class="card mb-3" style="max-width: 500px;">
+                <div class="row no-gutters ">
+                  <div class="col-4 imgContainer">
+                    <img src="../../../../assets/img/office-building.svg" class="img-fluid" alt="...">
+                  </div>
+                  <div class="col-8 textContainer">
+                    <div class="card-body">
+                      <div class="card-text"> 
+                          <p> <span class=" weight_custom_word">Nombre: </span>{{ suc.name}} </p>
+                          <p> <span class=" weight_custom_word">Domicilio: </span>{{ suc.location}} </p>
+                          <p> <span class=" weight_custom_word">Tel:</span> {{suc.tel}} </p>
+                          <div class="card-edit"> 
+                                <span class=" weight_custom_word">Estado: </span> {{ suc.state}}
+                                <div class="card-controls">
+                                    <i (click)="deleteSucursal(suc)" class="fas fa-times color_custom_word"></i> 
+                                    <i (click)="updateSucursal(suc.id)" class="fas fa-edit"></i>
+                                </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
 </div>

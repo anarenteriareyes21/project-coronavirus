@@ -1,0 +1,33 @@
+
+.textContainer{
+    margin-top: 20vh;
+}
+
+.contagiado__title{
+    font-weight: bold;
+}
+
+.contagiado__p{
+    margin-top: 5px;
+    font-size: 19px;
+    line-height: 1.8rem;
+}
+
+.contagiado__img{
+    width: 85%;
+}
+
+.btn-contagiado{
+    outline: none;
+    border: none;
+    background-color: #F07171;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 30px;
+}
+
+.btn-contagiado:hover{
+    background-color: #f58d8d;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}

@@ -1,4 +1,5 @@
 export const estados = [
+    'Selecciona un estado',
     'Aguascalientes',
     'Baja California',
     'Baja California Sur',

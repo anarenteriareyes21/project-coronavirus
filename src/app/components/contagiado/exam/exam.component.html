@@ -1,0 +1,135 @@
+<!-- <div class="container"> -->
+<!-- <h1>Autotest COVID-19</h1> -->
+<!-- <div *ngFor="let pr of preguntas; let i = index"> -->
+<!-- ---------- PRIMERAS TRES PREGUNTAS -------------  -->
+<!-- <ng-container *ngIf="step === pr.questionID && pr.questionID < 4 && !mensaje1 && !mensaje2">
+            {{ pr.questionText }}
+            <button [disabled]="checkedSi && !checkedNo" value=10 (click)="onClickSi($event);" class="btn btn-danger"> Si </button>
+            <button [disabled]="checkedNo && !checkedSi" value=5 (click)="onClickNo($event); " class="btn btn-success">No</button>
+        </ng-container> -->
+<!-- -------- PREGUNTAS SOBRE SINTOMAS --------------- -->
+<!-- <ng-container *ngIf="step >= 4 && pr.questionID >= 4 && !mensaje1 && !mensaje2 &&!mensaje3 && !mensaje4">
+            {{ pr.questionText }}
+            <div class="form-check form-check-inline">
+                <input (change)="onChangeCheckbox($event)" class="form-check-input" type="checkbox" id="inlineCheckbox1" value=10>
+            </div>
+        </ng-container> -->
+<!-- </div> -->
+<!-- mensajes  -->
+<!-- <span *ngIf="mensaje1"> No padeces coronavirus</span>
+    <span *ngIf="mensaje2"> Por favor llama a un numero de emergencia</span>
+    <span *ngIf="mensaje3"> Tus sintomas pueden ser causa de otra enfermedad</span>
+    <span *ngIf="mensaje4"> Puedes padecer coronavirus, resguardate 14 días</span>
+
+    <button *ngIf="step > 1" class="btn btn-danger" (click)="step = step - 1; "> Atras </button>
+    <button class="btn btn-success" (click)="step = step + 1; sumaRespuestas()"> Siguiente </button>
+</div> -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7 mt-md-5">
+      <div
+        class="leftContent d-flex flex-column justify-content-center align-items-center"
+      >
+        <img src="../../../assets/img/no-virus-icon.svg" class="imgInfo mt-5" />
+        <h2 class="weight_custom_word mt-2">Autotest COVID-19</h2>
+        <!-- pregunta especial de sintomas -->
+        <p
+          class="text-center preguntaText"
+          *ngIf="step === 4 && !mensaje1 && !mensaje2 && !mensaje3 && !mensaje4"
+        >
+          De la siguiente lista de sintomas selecciona los que sientas:
+        </p>
+        <div
+          *ngFor="let pr of preguntas; let i = index"
+          class="preguntasContainer d-flex flex-column justify-content-center align-items-center"
+        >
+          <!-- ------ PRIMERAS TRES PREGUNTAS ---------- -->
+          <ng-container
+            *ngIf="
+              step === pr.questionID &&
+              pr.questionID < 4 &&
+              !mensaje1 &&
+              !mensaje2
+            "
+          >
+            <p class="text-center preguntaText">{{ pr.questionText }}</p>
+            <div class="respuestas">
+              <button
+                [disabled]="checkedSi && !checkedNo"
+                value="10"
+                (click)="onClickSi($event)"
+                class="btn btnSi"
+              >
+                Si
+              </button>
+              <button
+                [disabled]="checkedNo && !checkedSi"
+                value="5"
+                (click)="onClickNo($event)"
+                class="btn btnNo ml-3"
+              >
+                No
+              </button>
+            </div>
+          </ng-container>
+          <!-- ----- PREGUNTAS SOBRE SINTOMAS -----  -->
+          <ng-container
+            *ngIf="
+              step >= 4 &&
+              pr.questionID >= 4 &&
+              !mensaje1 &&
+              !mensaje2 &&
+              !mensaje3 &&
+              !mensaje4
+            "
+          >
+            <div class="form-check form-check-inline">
+              {{ pr.questionText }}
+              <input
+                (change)="onChangeCheckbox($event)"
+                class="form-check-input ml-2"
+                type="checkbox"
+                id="inlineCheckbox1"
+                value="10"
+              />
+            </div>
+          </ng-container>
+        </div>
+
+        <!-- ------ MENSAJES ------ -->
+        <span class="alert alert-success" *ngIf="mensaje1"> No padeces coronavirus</span>
+        <span class="alert alert-danger" *ngIf="mensaje2"> ¡Por favor llama a un numero de emergencia!</span>
+        <span class="alert alert-warning" *ngIf="mensaje3"
+          >Tus sintomas pueden ser causa de otra enfermedad</span
+        >
+        <span class="alert alert-danger" *ngIf="mensaje4"
+          >Puedes padecer coronavirus, resguardate 14 días</span
+        >
+
+        <!-- <button
+          *ngIf="step > 1"
+          class="btn btn-danger"
+          (click)="step = step - 1"
+        >
+          Atras
+        </button> -->
+        <button
+          (click)="step = step + 1; sumaRespuestas()"
+          class="btn btnNext mt-5"
+        >
+          Siguiente
+        </button>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="rightContent">
+        <img
+          class="imgFight"
+          src="../../../../assets/img/fightVirus.svg"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>

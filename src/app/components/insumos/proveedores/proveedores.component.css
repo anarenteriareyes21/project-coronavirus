@@ -1,0 +1,93 @@
+.container {
+  margin-top: 5vh;
+  padding: 10px;
+}
+
+.container h2 {
+  font-weight: bold;
+}
+
+.searchContainer {
+  margin-top: 20px;
+}
+
+.custom-select {
+  width: 50%;
+  border-radius: 10px;
+  border: 1px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.searchIcon {
+  width: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.maskContainer,
+.sanitizerContainer,
+.oxygenContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.maskContainer img,
+.sanitizerContainer img,
+.oxygenContainer img {
+  width: 124px;
+}
+
+.maskContainer span,
+.sanitizerContainer span,
+.oxygenContainer span {
+  color: #f07171;
+  font-weight: bold;
+}
+
+/*  ------  card style --------------  */
+.card {
+  background-color: #f9f8f8;
+  border: none;
+  margin-top: 16px;
+}
+
+.card .row {
+  height: 120px;
+}
+
+.imgContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgContainer img {
+  height: 100%;
+}
+
+.textContainer {
+  height: 120px;
+}
+
+.textContainer .card-body {
+  height: 100%;
+  margin: 0;
+  text-align: start;
+}
+
+.textContainer .card-body .card-title {
+  font-size: 20px;
+
+  margin-bottom: 0px;
+}
+
+.textContainer .card-body .card-text p {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+.textContainer .card-body .card-edit {
+  position: relative;
+}

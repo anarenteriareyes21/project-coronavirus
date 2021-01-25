@@ -1,0 +1,42 @@
+
+.container-fluid{
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.leftContent{
+  border-radius: 15px;
+  box-shadow: 15px 0px 10px -11px rgba(0, 0, 0, 0.1);
+}
+
+.leftContent h2{
+  letter-spacing: 0.2rem;
+}
+
+.preguntaText{
+  width: 70%;
+  font-size: 18px;
+}
+
+.imgInfo{
+  width: 100px;
+  align-self: center;
+}
+
+.btnSi{
+  color: #fff;
+  padding: 5px 20px;
+  background-color: #F07171;
+}
+
+.btnNo{
+  color: #fff;
+  background-color: #6FD1BE;
+}
+
+.btnNext{
+  background-color: #F07171;
+  padding: 5px 50px;
+  color: #fff;
+}

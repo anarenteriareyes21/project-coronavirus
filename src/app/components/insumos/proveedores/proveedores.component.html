@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <h1>Lista de proveedores</h1>
     <select [(ngModel)]="estadoNombre" name="state" class="custom-select">
         <option selected>Selecciona un estado</option>
@@ -13,4 +13,65 @@
             <h5>telefono: {{proveedor.tel}}</h5>
         </li>
     </ul>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <div *ngIf="tipoProducto === 'mask'" class="maskContainer">
+        <img
+          src="../../../../assets/img/medical-mask.png"
+          alt=""
+        />
+        <span>Mascarillas</span>
+      </div>
+      <div *ngIf="tipoProducto === 'sanitizer'" class="sanitizerContainer">
+        <img
+          src="../../../../assets/img/sanitizer.png"
+          alt=""
+        />
+        <span >Gel antibacterial</span>
+      </div>
+      <div *ngIf="tipoProducto === 'oxygen'" class="oxygenContainer">
+        <img
+          src="../../../../assets/img/tanque-de-oxigeno.png"
+          alt=""
+        />
+        <span>Tanque de oxigeno</span>
+      </div>
+      <h2>Lista de proveedores</h2>
+      <div class="searchContainer">
+          <select [(ngModel)]="estadoNombre" name="state" class="custom-select">
+            <option selected>Selecciona un estado</option>
+            <option *ngFor="let estado of estados" [value]="estado">
+              {{ estado }}
+            </option>
+          </select>
+          <img
+            (click)="buscarProveedores()"
+            class="searchIcon"
+            src="../../../../assets/img/search.svg"
+          />
+      </div>
+      <div  *ngFor="let suc of proveedores" class="card mb-3" style="max-width: 500px;">
+        <div class="row no-gutters ">
+          <div class="col-4 imgContainer">
+            <img src="../../../../assets/img/office-building.svg" class="img-fluid" alt="...">
+          </div>
+          <div class="col-8 textContainer">
+            <div class="card-body">
+              <div class="card-text"> 
+                  <p> <span class=" weight_custom_word">Nombre: </span>{{ suc.name}} </p>
+                  <p> <span class=" weight_custom_word">Domicilio: </span>{{ suc.location}} </p>
+                  <p> <span class=" weight_custom_word">Tel:</span> {{suc.tel}} </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img src="../../../../assets/img/antiVirus.svg" alt="" class="d-none d-md-block" />
+    </div>
+  </div>
 </div>

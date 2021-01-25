@@ -1,5 +1,6 @@
 .navbar__main{
     background-color: #fff;
+    z-index: 99999;
 }
 
 .navbar-nav .nav-item a{
@@ -24,4 +25,14 @@
 .navbar-light .navbar-toggler .navbar-toggler-icon{
     color: #fff !important;
    
+}
+
+.isActive{
+    border-bottom: 5px solid #F07171;
+}
+
+.buttonActive{
+    background-color: #fff;
+    color: #F07171;
+    border: #F07171 1px solid;
 }
