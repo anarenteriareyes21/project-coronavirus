@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmpresaModel } from 'src/app/models/EmpresaModel';
 import { SucursalModel } from 'src/app/models/SucursalModel';
@@ -18,6 +19,7 @@ export class RegisterComponent implements OnInit {
   usarioInfo: UsuarioModel = {};
   sucursal: SucursalModel;
   estados = [];
+  validacionChecks = false;
 
 
   constructor(public _location: Location,
@@ -26,7 +28,7 @@ export class RegisterComponent implements OnInit {
               public router: Router) {
     this.activatedRoute.params.subscribe(params => {
       this.empresa.userID = params.id;
-      console.log(this.empresa.userID);
+      // console.log(this.empresa.userID);
     })
 
   }
@@ -37,13 +39,14 @@ export class RegisterComponent implements OnInit {
     // Obtener el parametro que corresponde al id de la sucursal:
     const id = this.activatedRoute.snapshot.paramMap.get('idSuc');
     if (id !== null) {
-      console.log('esto es un update');
+      // console.log('esto es un update');
       this.empresasService.getSucursal(this.empresa.userID, id).subscribe(data => {
         this.sucursal = data as SucursalModel;
         this.sucursal.id = id;
       })
     }
     this.sucursal = new SucursalModel();
+    this.sucursal.state = this.estados[0]; 
     this.getEnterprises();
   }
 
@@ -61,19 +64,20 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onSubmit(form : NgForm) {
     if (this.sucursal.id != null) {
-      console.log('se va a actualizar sucursal');
+      // console.log('se va a actualizar sucursal');
       if (!this.validarCampos()) {
-        console.log('Por favor selecciona al menos un producto');
+        // console.log('Por favor selecciona al menos un producto');
+       
       } else {
         this.empresasService.updateSucursal(this.empresa.userID, this.sucursal);
         this.router.navigate(['empresas/dashboard', this.empresa.userID]);
       }
     } else {
-      console.log('entra para crear');
+      // console.log('entra para crear');
       if (!this.validarCampos()) {
-        console.log('Por favor selecciona al menos un producto');
+        // console.log('Por favor selecciona al menos un producto');
       } else {
         this.empresasService.addSucursal(this.sucursal, this.empresa.userID);
         this.router.navigate(['empresas/dashboard', this.empresa.userID]);
@@ -85,6 +89,7 @@ export class RegisterComponent implements OnInit {
 
   validarCampos() {
     if (!this.sucursal.products.mask && !this.sucursal.products.oxygen && !this.sucursal.products.sanitizer) {
+      this.validacionChecks = true;
       return false;
     } else {
       return true;
@@ -94,7 +99,16 @@ export class RegisterComponent implements OnInit {
 
 
   // =================== MOVES FORM ============================= //
-  siguiente() {
+  siguiente(form : NgForm) {
+    if(form.invalid){
+      Object.values(form.controls).forEach(control =>{
+        control.markAsTouched();
+      });
+      return;
+    }
+    if(this.sucursal.state === this.estados[0]){
+      return;
+    }
     this.step = 2;
   }
 

@@ -25,17 +25,17 @@ export class ProveedoresComponent implements OnInit {
 
   ngOnInit(): void {
     this.estados = this.empresasService.getEstados();
-
-    // this.empresasService.getSucursalByProduct().subscribe(data => {
-    //   // this.info = data;
-    //   // console.log(this.info);
-    // })
+    this.estadoNombre = this.estados[0];
   }
 
   buscarProveedores(){
+      if(this.estadoNombre === this.estados[0]){
+        return;
+      }
+
       this.empresasService.getSucursalByProduct(this.tipoProducto,this.estadoNombre).subscribe(data => {
         this.proveedores = data;
-        console.log(this.proveedores);
+        // console.log(this.proveedores);
       })
   }
 }

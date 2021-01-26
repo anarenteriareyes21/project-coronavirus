@@ -56,10 +56,13 @@ export class UserDashboardComponent implements OnInit {
     this.empresasService.deleteSucursal(this.idUser,sucursal);
   }
 
-
-
   navigate() {
     this.route.navigate(['empresas/dashboard/register', this.idUser]);
+  }
+
+  cerrarSesion(){
+    this.empresasService.signOut();
+    this.route.navigateByUrl("empresas/userLogin");
   }
 
 

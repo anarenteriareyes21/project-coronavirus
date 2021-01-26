@@ -1,90 +1,70 @@
-<!-- <div class="container">
-    <div class="">
-        <form (ngSubmit)="onSubmit()">
-            <div *ngIf="step === 1" class="">
-                <input [(ngModel)]="sucursal.name" class="form-control" type="text" name="name"
-                    placeholder="nombre empresa">
-                <input [(ngModel)]="sucursal.location" class="form-control" type="text" name="location"
-                    placeholder="domicilio">
-                <input [(ngModel)]="sucursal.tel" class="form-control" type="text" name="tel" placeholder="tel">
-                <select [(ngModel)]="sucursal.state" name="state" class="custom-select">
-                    <option selected>Open this select menu</option>
-                    <option *ngFor="let estado of estados" [value]= "estado">{{ estado }}</option>
-                </select>
-                <button (click)="siguiente()" class="btn btn-danger" type="button"> Siguiente </button>
-            </div>
-            <div *ngIf="step === 2">
-                <div class="form-check form-check-inline">
-                    <input  [(ngModel)]="sucursal.products.sanitizer" (change)="onChange($event,'sanitizer')" name="products.sanitizer"  class="form-check-input" type="checkbox" id="inlineCheckbox1">
-                    <label class="form-check-label" for="inlineCheckbox1">Gel antibacterial</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input  [(ngModel)]="sucursal.products.mask" (change)="onChange($event,'mask')" name="products.mask"  class="form-check-input" type="checkbox" id="inlineCheckbox2" >
-                    <label class="form-check-label" for="inlineCheckbox2">Mascarillas</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input  [(ngModel)]="sucursal.products.oxygen" (change)="onChange($event,'oxygen')" name="products.oxygen"  class="form-check-input" type="checkbox" id="inlineCheckbox3" >
-                    <label class="form-check-label" for="inlineCheckbox3">Tanque de oxigeno</label>
-                  </div>
-                <br>
-                <button (click)="atras()" class="btn btn-danger" type="button"> Anterior </button>
-
-                <button class="btn btn-success" type="submit">Terminar</button>
-            </div>
-
-        </form>
-        <a (click)="goBack()" class="btn btn-secondary"> Cancelar </a>
-    </div>
-</div> -->
-
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <form (ngSubmit)="onSubmit()" class="form__main text-center">
+      <form #registroForm="ngForm" (ngSubmit)="onSubmit(registroForm)" class="form__main text-center">
         <div *ngIf="step === 1">
           <h4>Agrega la información de tu sucursal:</h4>
           <div class="form-group">
             <i class="fas fa-building"></i>
             <input
+              #name = "ngModel"
               name="name"
               [(ngModel)]="sucursal.name"
               class="myInput"
               type="text"
               placeholder="Nombre de la sucursal"
+              [class.invalidCampo]="name.invalid && name.touched"
+              ngModel
+              required
+              minlength = "2"
             />
           </div>
           <div class="form-group">
             <i class="fas fa-location-arrow"></i>
             <input
+              #location = "ngModel"
               name="location"
               [(ngModel)]="sucursal.location"
               class="myInput"
               type="text"
               placeholder="Domicilio: calle y colonia"
+              [class.invalidCampo]="location.invalid && location.touched"
+              ngModel
+              required
+              minlength = "5"
             />
           </div>
           <div class="form-group">
             <i class="fas fa-phone-volume"></i>
             <input
+              #tel = "ngModel" 
               name="tel"
               [(ngModel)]="sucursal.tel"
               class="myInput"
               type="text"
               placeholder="Numero de teléfono"
+              [class.invalidCampo]="tel.invalid && tel.touched"
+              ngModel
+              required
+              minlength = "8"
             />
           </div>
           <div class="form-group">
             <select
+              #state = "ngModel"
               [(ngModel)]="sucursal.state"
               name="state"
               class="custom-select"
+              [class.invalidCampo]="state.value === estados[0] && state.touched"
+              required
+              ngModel
             >
               <option *ngFor="let estado of estados" [value]="estado">
                 {{ estado }}
               </option>
             </select>
           </div>
-          <button (click)="siguiente()" type="button" class="btn btn-next">
+          <button (click)="siguiente(registroForm)" type="button" class="btn btn-next">
             Siguiente
           </button>
         </div>
@@ -140,7 +120,8 @@
               </div>
             </div>
           </div>
-          <button class="btn btn-finish" type="submit">Terminar</button>
+          <small *ngIf="validacionChecks" class="mt-1 text-danger">Por favor selecciona al menos un producto</small> <br>
+          <button class="btn btn-finish mt-2" type="submit">Terminar</button>
         </div>
       </form>
       <ng-container *ngIf="step > 1">

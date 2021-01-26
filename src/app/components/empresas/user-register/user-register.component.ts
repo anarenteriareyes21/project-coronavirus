@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioModel } from 'src/app/models/UsuarioModel';
 import { EmpresasService } from 'src/app/services/empresas.service';
@@ -24,7 +25,14 @@ export class UserRegisterComponent implements OnInit {
     this.router.navigateByUrl('empresas/userLogin');
   }
 
-  onSubmit() {
+  onSubmit(form: NgForm) {  
+    if(form.invalid){
+      Object.values(form.controls).forEach(control =>{
+        control.markAsTouched();
+      });
+      return;
+    }
+   // El formulario es valido, se hace el registro:
     this.empresasSevice.signUp(this.usuario.email,this.usuario.password)
       .then(userCredential => {
           console.log('registrado');
@@ -34,8 +42,7 @@ export class UserRegisterComponent implements OnInit {
             'email': userCredential.user.email
           }
           this.empresasSevice.addEnterprise(this.userInfo);
-          console.log(this.userInfo);
-          console.log('aqui estoy');
+          // console.log(this.userInfo);
           this.router.navigate(['empresas/dashboard', userCredential.user.uid]);
       })
       .catch(console.error);

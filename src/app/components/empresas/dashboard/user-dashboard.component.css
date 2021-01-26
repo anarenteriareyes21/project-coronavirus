@@ -108,3 +108,14 @@
 .fa-edit{
     color: #EF8A3D;
 }
+
+.btnSignout{
+    color: #000;
+}
+
+.btnSignout:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #f07171;
+    transition: all 0.2s ease-in-out;
+}

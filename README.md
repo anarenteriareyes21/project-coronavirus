@@ -1,4 +1,20 @@
 # ProjectCoronavirus
+  sarsInfo es una aplicación web que pretende brindar información a los usuarios sobre
+  los conocimientos básicos del virus “SARS-COV2” mejor conocido como “coronavirus”,
+  motivando a la población a tomar las medidas necesarias para preservar su salud.
+  Ofreciendo además un autotest como herramienta para la detección de la enfermedad
+  provocada por el virus.
+
+  Así mismo, sarsInfo pretende ser una plataforma que permite a usuarios/empresas que
+  venden insumos esenciales (como pueden ser “mascarillas”, “tanques de oxígeno” y
+  “gel antibacterial”) para el tratamiento de la enfermedad “covid-19” darse a conocer
+  por medio de esta plataforma.
+
+
+# Comandos necesarios para ejecutar el proyecto
+   `npm install` para instalar los modulos de node.
+
+# Angular CLI version
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 

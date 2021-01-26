@@ -1,24 +1,6 @@
-<!-- <div class="container">
-    <h1>Hola, {{ usarioInfo.userName}} </h1>
-    <button (click)="navigate()" class="btn btn-success">Agregar</button>
-    <br>
-    <ul class="list-group">
-        <li *ngFor="let suc of sucursales" class="list-group-item list-group-item-action">
-            <h5>nombre: {{suc.name}}</h5>
-            <h5>estado: {{suc.state}}</h5>
-            <button (click)="deleteSucursal(suc)" class="btn btn-danger">
-                Eliminar
-            </button>
-            <button (click)="updateSucursal(suc.id)"  class="btn btn-warning">
-                Editar
-            </button>
-        </li>
-    </ul>
-</div> -->
-
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-6 leftContainer">
+        <div class="col-sm-12 col-md-6 leftContainer d-flex flex-column">
             <img src="../../../../assets/img/imgDashboard.svg">
              <h1>Hola, <span class="color_custom_word" style="text-transform: capitalize;"> {{ usarioInfo.userName}} </span></h1>
              <p>
@@ -26,9 +8,12 @@
                 Agrega una nueva sucursal donde las personas puedan comprar los productos escenciales 
                 para luchar contra el covid-19.
              </p>
-             <div (click)="navigate()" class="addButton">
+             <div (click)="navigate()" class="addButton align-self-start">   
                  <img src="../../../../assets/img/plus.svg" class="img-fluid"> <span> Agregar una nueva sucursal</span> 
-             </div>   
+             </div>
+             <div class="mt-2">
+               <i class="fas fa-sign-out-alt"></i><a (click)="cerrarSesion()" class="btnSignout"> Cerrar sesión</a>   
+             </div>
         </div>
         <div class="col-sm-12 col-md-6 rightContainer">
             <h3 class="text-center weight_custom_word"> Tus sucursales agregadas</h3>

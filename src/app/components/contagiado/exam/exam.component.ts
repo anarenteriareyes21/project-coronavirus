@@ -23,6 +23,7 @@ export class ExamComponent implements OnInit {
   mensaje2 = false;
   mensaje3 = false;
   mensaje4 = false;
+  reset = false;
   // Arreglo de preguntas
   preguntas = preguntas as PreguntaModel;
 
@@ -46,12 +47,11 @@ export class ExamComponent implements OnInit {
   onClickNo(event){
     this.checkedNo = true;
     this.checkedSi = false;
-    console.log('click No')
 
     if(this.checkedNo){
       this.respuestasRadios.pop();
       this.respuestasRadios.push(event.target.value);
-      console.log(this.respuestasRadios);
+      // console.log(this.respuestasRadios);
     }
   
   }
@@ -59,10 +59,10 @@ export class ExamComponent implements OnInit {
   onChangeCheckbox(event){
     if(event.target.checked){
       Number(this.respuestasSintomas.push(event.target.value));
-      console.log(this.respuestasSintomas);
+      // console.log(this.respuestasSintomas);
     }else{
       this.respuestasSintomas.pop();
-      console.log(this.respuestasSintomas);
+      // console.log(this.respuestasSintomas);
     }
   }
 
@@ -75,20 +75,22 @@ export class ExamComponent implements OnInit {
       // console.log(this.step);
       if(this.step <= 4){
         this.totalRadios += parseInt(this.respuestasRadios[0]);
-        console.log(this.totalRadios);
+        // console.log(this.totalRadios);
 
         // condiciones para mensajes:
         if(this.step === 3){
           if(this.totalRadios === 10 || (this.totalRadios === 15 && this.respuestasRadios[0] === "5")){
-            console.log('No padeces coronavirus');
+            // console.log('No padeces coronavirus');
             this.mensaje1 = true;
+            this.reset = true;
             return;
           }
         }
         if(this.step === 4) {
           if((this.totalRadios === 25 && this.respuestasRadios[0] == "10") || this.totalRadios === 30){
-            console.log('Por favor llama a un numero de emergencia');
+            // console.log('Por favor llama a un numero de emergencia');
             this.mensaje2 = true;
+            this.reset = true;
             return;
           }  
         }  
@@ -101,14 +103,16 @@ export class ExamComponent implements OnInit {
         this.sumaTotal = this.totalSintomas + this.totalRadios;
 
         if( this.sumaTotal >= 20 && this.sumaTotal < 50){
-          console.log('Tus síntomas pueden ser causa de otra enfermedad');
+          // console.log('Tus síntomas pueden ser causa de otra enfermedad');
           this.mensaje3 = true;
+          this.reset = true;
           return;
         }
 
         if(this.sumaTotal > 50){
-          console.log('Puedes padecer coronavirus resguardate en casa');
+          // console.log('Puedes padecer coronavirus resguardate en casa');
           this.mensaje4 = true;
+          this.reset = true;
           return;
         }
       }
@@ -120,6 +124,22 @@ export class ExamComponent implements OnInit {
     }else{
       return true;
     }
+  }
+
+  reiniciar(){
+    this.step = 1;
+    this.sumaTotal = 0;
+    this.totalRadios = 0;
+    this.totalSintomas = 0;
+    this.respuestasSintomas = [];
+    this.respuestasRadios = [];
+    this.checkedSi = false; 
+    this.checkedNo = false;
+    this.mensaje1 = false;
+    this.mensaje2 = false;
+    this.mensaje3 = false;
+    this.mensaje4 = false;
+    this.reset = false;
   }
 
 }

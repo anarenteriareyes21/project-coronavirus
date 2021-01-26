@@ -1,48 +1,69 @@
-
-<!-- <div class="conatiner">
-    <form (ngSubmit)= "onSubmit()">
-        <input [(ngModel)]="usuario.email" class="form-control"type="email" name="email" placeholder="email">
-        <input [(ngModel)]="usuario.password" class="form-control"type="password" name="password" placeholder="passowrd">
-        <button class="btn btn-danger" type="submit">Iniciar sesion</button>
-    </form>
-</div> -->
-
 <div class="container mx-auto">
-    <div class="myCard">
-            <div class="row">
-                    <div class="col-md-6">
-                            <div class="myLeftCtn">
-                                    <form (ngSubmit)="onSubmit()" class="myForm text-center">
-                                            <header>Inicia sesión</header>
-                                            <div class="form-group">
-                                                    <i class="fas fa-envelope"></i>
-                                                    <input required [(ngModel)]="usuario.email" name="email" class="myInput" type="email"
-                                                            placeholder="Correo" id="email" />
-                                            </div>
-                                            <div class="form-group">
-                                                    <i class="fas fa-lock"></i>
-                                                    <input required  [(ngModel)]="usuario.password"
-                                                            name="password" class="myInput" type="password"
-                                                            placeholder="Contraseña" id="password" />
-                                            </div>
-                                            <input type="submit" class="btnCustom" value="Iniciar sesión" />
-                                    </form>
-                                    <a class="linkLeft" routerLink="empresas/userRegister">¿No tienes una cuenta? Registrate.</a>
-                                </div>
-                    </div>
-                    <div class="col-md-6">
-                            <div class="myRightCtn">
-                                    <div class="box">
-                                            <img src="../../../../assets/img/InsumosImg.png" class="img-fluid">
-                                            <header>Ayuda a la lucha contra el <span class="color_custom_word">COVID-19</span></header>
-                                            <p>
-                                                 Puedes ayudar a la sociedad a luchar contra el 
-                                                 coronavirus, registra tu empresa en <span class="weight_custom_word">sarsInfo.</span> 
-                                                 ¡Nosotros nos encargaremos de que las personas te encuentren!
-                                            </p>
-                                    </div>
-                            </div>
-                    </div>
+  <div class="myCard">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="myLeftCtn">
+          <form #registroForm="ngForm" (ngSubmit)="onSubmit(registroForm)" class="myForm text-center">
+            <header>Inicia sesión</header>
+            <div class="form-group">
+              <i class="fas fa-envelope"></i>
+              <input
+                #email = "ngModel"
+                [(ngModel)]="usuario.email"
+                name="email"
+                class="myInput"
+                type="email"
+                placeholder="Correo"
+                id="email"
+                [class.invalidCampo]="email.invalid && email.touched"
+                ngModel
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+              />
             </div>
+            <div class="form-group">
+              <i class="fas fa-lock"></i>
+              <input
+                #password = "ngModel"
+                [(ngModel)]="usuario.password"
+                [class.invalidCampo]="password.invalid && password.touched"
+                name="password"
+                class="myInput"
+                type="password"
+                placeholder="Contraseña"
+                id="password"
+                ngModel
+                required
+                minlength = "5"
+              />
+            </div>
+            <input type="submit" class="btnCustom" value="Iniciar sesión" />
+          </form>
+          <a class="linkLeft" routerLink="empresas/userRegister"
+            >¿No tienes una cuenta? Registrate.</a
+          >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="myRightCtn">
+          <div class="box">
+            <img
+              src="../../../../assets/img/InsumosImg.png"
+              class="img-fluid"
+            />
+            <header>
+              Ayuda a la lucha contra el
+              <span class="color_custom_word">COVID-19</span>
+            </header>
+            <p>
+              Puedes ayudar a la sociedad a luchar contra el coronavirus,
+              registra tu empresa en
+              <span class="weight_custom_word">sarsInfo.</span>
+              ¡Nosotros nos encargaremos de que las personas te encuentren!
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
